@@ -7,6 +7,9 @@
 
 #include "network/KamiNet.hpp"
 #include "render/KamiRender.hpp"
+#include "render/KamiShader.hpp"
+#include "render/KamiShapePrimitive.hpp"
+#include "render/KamiTexture.hpp"
 #include "platform/glfw_window.hpp"
 
 #include <glm/vec3.hpp> // glm::vec3

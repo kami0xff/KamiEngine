@@ -16,3 +16,6 @@
 [submodule "external/asio"]
 	path = external/asio
 	url = https://github.com/boostorg/asio
+[submodule "external/stb"]
+	path = external/stb
+	url = https://github.com/nothings/stb

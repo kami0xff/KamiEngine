@@ -14,16 +14,15 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 #how would i make this one automatic
-#"C:\PostgreSQL\14\include\libpq-fe.h"
-set(PostgreSQL_INCLUDE_DIR "C:/PostgreSQL/14/include")
-set(PostgreSQL_LIBRARY_DIR "C:/PostgreSQL/14/lib")
-set(PostgreSQL_ROOT "C:/PostgreSQL/14")
+#set(PostgreSQL_INCLUDE_DIR "C:/PostgreSQL/14/include")
+#set(PostgreSQL_LIBRARY_DIR "C:/PostgreSQL/14/lib")
+#set(PostgreSQL_ROOT "C:/PostgreSQL/14")
 
 add_subdirectory("external/glfw")
 add_subdirectory("external/glm")
 add_subdirectory("external/fmt")
 add_subdirectory("external/glad")
-add_subdirectory("external/libpqxx" build-pqxx)
+#add_subdirectory("external/libpqxx" build-pqxx)
 add_subdirectory("external/json")
 #strange stfuff with boost 
 #add_subdirectory("external/asio")
@@ -52,10 +51,9 @@ target_include_directories(${PROJECT_NAME}
 		fmt
 		glfw
 		glad
-		pqxx
 		nlohmann_json
 	PRIVATE
-		
+		"external/stb" #header files only 
 )
 
 
@@ -65,7 +63,6 @@ target_link_libraries(${PROJECT_NAME}
 		fmt
 		glfw
 		glad
-		pqxx
 		nlohmann_json
 	PRIVATE
 )

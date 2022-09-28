@@ -1,5 +1,6 @@
 #include "render/KamiRender.hpp"
 
-int Render::numberOfTriangles() {
+int Render::numberOfTriangles() 
+{
 	return 234;
 }
