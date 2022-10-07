@@ -26,6 +26,7 @@ add_subdirectory("external/glad")
 add_subdirectory("external/json")
 #strange stfuff with boost 
 #add_subdirectory("external/asio")
+#add_subdirectory("external/openal-soft")
 
 
 

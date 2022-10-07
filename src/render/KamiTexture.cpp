@@ -11,12 +11,16 @@ KamiTexture::~KamiTexture()
 	stbi_image_free(m_data);
 }
 
-void KamiTexture::readContainerTexture()
+
+//needs to be more general takes a std::string as argument not hard coded string
+
+void KamiTexture::readTexture(const char* path)
 {
 
+	stbi_set_flip_vertically_on_load(true);
 	//where is this data ?? data should be pointing to some temporary object here ??
 	//so im not sure i might be returning a pointer that points to nothing after this function its a bit strange 
-	m_data = stbi_load("C:\\Dev\\C++_CMAKE_Learning\\engine\\texture\\container.jpg", &m_width, &m_height, &m_nrChannels, 0);
+	m_data = stbi_load(path, &m_width, &m_height, &m_nrChannels, 0);
 
 	if (!m_data)
 	{
@@ -31,17 +35,24 @@ void KamiTexture::readContainerTexture()
 void KamiTexture::createTexture()
 {
 	//opengl functions should always be called in a context where glad is initialized
-	glGenTextures(1, &m_id);
+	//maybe i need some kind of define when glad is init
+	//is this kind of stuff a good idea ??
+	//i means in any case
+	//#ifdef KAMI_GLAD_LOADED
 
+	glGenTextures(1, &m_id);
 	//setting the texture wrapping and filtering options here for now 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	//#else
+
 }
 
-void KamiTexture::bindTexture()
+void KamiTexture::bindTexture(int textureUnit)
 {
+	glActiveTexture(GL_TEXTURE0 + textureUnit);//activate texture unit
 	glBindTexture(GL_TEXTURE_2D, m_id);
 }
 

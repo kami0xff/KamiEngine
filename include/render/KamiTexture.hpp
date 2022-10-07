@@ -5,9 +5,9 @@
 class KamiTexture {
 
 public:
-	void readContainerTexture(void);
+	void readTexture(const char*);
 	void createTexture();
-	void bindTexture();
+	void bindTexture(int);
 	void generateTexture();
 	~KamiTexture();
 	unsigned char* m_data;
