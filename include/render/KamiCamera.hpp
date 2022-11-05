@@ -1,4 +1,4 @@
-#include "engine/IKamiInputEventListener.hpp"
+//#include "engine/IKamiInputEventListener.hpp"
 #include "engine/KamiInputEvent.hpp"
 #include <glm/glm.hpp>
 #include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
@@ -7,7 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 //implements IinputEventListener
-class KamiCamera : public IKamiInputEventListener {
+class KamiCamera {
 
 public:
 	//make these defaults in the default constructor
@@ -20,7 +20,8 @@ public:
 	KamiCamera();
 
 	//needs to be the pure virtual implementation
-	void notifyInputEvent(KamiInputEvent);
+	//void notifyInputEvent(KamiInputEvent);
+
 	float m_cameraSpeed; // adjust accordingly
 	glm::vec3 m_upReference;
 	glm::vec3 m_cameraPos;
@@ -28,6 +29,9 @@ public:
 	glm::vec3 m_cameraDirection;
 	glm::vec3 m_cameraRight;
 	glm::vec3 m_cameraUp;
+	glm::vec3 m_cameraFront;
+
 	glm::mat4 m_view;
+
 
 };

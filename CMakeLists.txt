@@ -4,16 +4,6 @@ cmake_minimum_required (VERSION 3.20)
 project (engine LANGUAGES CXX )
 set(CMAKE_CXX_STANDARD 20)
 
-
-#adding the external libraries glm and glfw
-#so when i do this cmake goes in these whole projects i pulled in 
-#reads the cmake files and builds it for me into my library ??
-#adding fmt felt insane easy 
-
-
-
-
-#how would i make this one automatic
 #set(PostgreSQL_INCLUDE_DIR "C:/PostgreSQL/14/include")
 #set(PostgreSQL_LIBRARY_DIR "C:/PostgreSQL/14/lib")
 #set(PostgreSQL_ROOT "C:/PostgreSQL/14")
@@ -27,9 +17,6 @@ add_subdirectory("external/json")
 #strange stfuff with boost 
 #add_subdirectory("external/asio")
 #add_subdirectory("external/openal-soft")
-
-
-
 
 #to avoid having to manually change the files below 
 #apparently inneficient for very large projects
