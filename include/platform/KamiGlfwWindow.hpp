@@ -7,9 +7,6 @@ class KamiGlfwWindow {
 public:
 	GLFWwindow* m_window;
 	void init();
-	void create();
+	void create(unsigned int, unsigned int);
 	void processInput();
-private:
-	const unsigned int SCR_HEIGHT = 600;
-	const unsigned int SCR_WIDTH = 800;
 };

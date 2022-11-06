@@ -10,7 +10,7 @@
 #include "render/KamiShader.hpp"
 #include "render/KamiShapePrimitive.hpp"
 #include "render/KamiTexture.hpp"
-#include "platform/glfw_window.hpp"
+#include "platform/KamiGlfwWindow.hpp"
 
 #include <glm/glm.hpp>
 #include <glm/vec3.hpp> // glm::vec3
