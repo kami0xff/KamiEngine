@@ -34,12 +34,9 @@ void KamiTexture::readTexture(const char* path)
 
 void KamiTexture::createTexture()
 {
-	//opengl functions should always be called in a context where glad is initialized
-	//maybe i need some kind of define when glad is init
-	//is this kind of stuff a good idea ??
-	//i means in any case
 	//#ifdef KAMI_GLAD_LOADED
 
+	//stores the handle to the texture in m_id so yes this should be in the component code then
 	glGenTextures(1, &m_id);
 	//setting the texture wrapping and filtering options here for now 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);

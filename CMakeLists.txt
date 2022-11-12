@@ -23,7 +23,7 @@ add_subdirectory("external/json")
 file(GLOB SOURCES "src/*.cpp", "src/*/*.cpp", "src/*/*/*.cpp")
 
 
-add_library(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME} ${SOURCES} "src/engine/entity/KamiEntityManager.cpp")
 
 
 #this is important when you are building libraries 

@@ -3,6 +3,9 @@
 #include <vector>
 class KamiGl {
 
+
+	//i feel like whatever VBo and stuff VAO etc that i make should be linked per entity
+
 	//pass in data and the name you want to give to your vbo 
 	//create vbo id store it in the map with its name and upload the data to it
 	void createVbo();

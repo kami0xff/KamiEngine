@@ -3,6 +3,14 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 
+KamiClientOptions& KamiClientOptions::getInstance()
+{
+	static KamiClientOptions instance;
+	return instance;
+
+}
+
+
 void KamiClientOptions::readClientOptionsJson() {
 	//
 	using nlohmann::json;

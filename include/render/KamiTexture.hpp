@@ -5,13 +5,17 @@
 class KamiTexture {
 
 public:
+	//specify texture unit in the json
+	//as well as width height nrChannels 
 	void readTexture(const char*);
 	void createTexture();
 	void bindTexture(int);
 	void generateTexture();
 	~KamiTexture();
 	unsigned char* m_data;
+	
 	unsigned int m_id;
 	int m_width, m_height, m_nrChannels;
+	int m_textureUnit;
 private:
 };

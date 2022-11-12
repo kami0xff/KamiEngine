@@ -1,9 +1,15 @@
 #include <map>
 #include <string>
 class KamiTextRessources {
-	
+private:
+	KamiTextRessources() {};
+	KamiTextRessources& operator=(const KamiTextRessources&);  // Leave unimplemented
+	KamiTextRessources(const KamiTextRessources&);
+
+
 public:
-	std::map<const std::string,const std::string> m_textRessources
+	static KamiTextRessources& getInstance();
+	std::map<const std::string, const std::string> m_textRessources
 	{
 		{"TEST","test string"},
 		{"TEST2", "test string2"},
@@ -12,13 +18,9 @@ public:
 		{"IDS_INITIALIZING", "Initializing"}
 	};
 
-	std::string getString(std::string key) 
+	std::string getString(std::string key)
 	{
 		//if(m_textRessources.contains(key)
 		return m_textRessources[key];
 	}
-	
-	//for now i don't see the advantage of laoding it from a xml file 
-	//void loadXMLTextRessources(std::string filePath);
-
 };
