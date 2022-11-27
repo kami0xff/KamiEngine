@@ -5,10 +5,15 @@
 #include "engine/component/KamiPositionComponent.hpp"
 #include "engine/component/KamiTransformComponent.hpp"
 #include "engine/component/KamiTextureComponent.hpp"
+#include "engine/component/KamiShaderComponent.hpp"
+#include "engine/component/KamiOpenglRenderComponent.hpp"
 #include <variant>
 using KamiEntityComponent = std::variant<
 	CubeVertexDataComponent,
 	KamiPositionComponent,
 	KamiTextureComponent,
-	KamiTransformComponent>;
+	KamiTransformComponent,
+	KamiShaderComponent,
+	KamiOpenglRenderComponent
+>;
 #endif

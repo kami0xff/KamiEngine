@@ -12,8 +12,10 @@ public:
 
 private:
 	KamiEntityComponent createPositionComponent(json);
-	//KamiEntityComponent createTextureComponent(json);
+	KamiEntityComponent createTextureComponent(json);
 	KamiEntityComponent createTransformComponent(json);
 	KamiEntityComponent createCubeVertexDataComponent(json);
+	KamiEntityComponent createShaderComponent(json);
+	KamiEntityComponent createOpenglRenderComponent(json);
 };
 #endif

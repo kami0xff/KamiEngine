@@ -32,6 +32,8 @@ public:
 	//
 
 	//store vertex and fragment shader code in map once loaded for reuse
+	//same will need to be in some kind of shader ressource cache
+	//TODO load the shaders in the ressource cache 
 	std::map<std::string, std::string> m_vertexShaderCodeMap;
 	std::map<std::string, std::string> m_fragmentShaderCodeMap;
 	

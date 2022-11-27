@@ -14,7 +14,12 @@ void KamiAppLayer::initialiseAppLayer()
 	//map infomration 
 	//singletons
 	KamiRessourceCache::getInstance().loadEntityRessources();
+	KamiRessourceCache::getInstance().loadVertexShaderRessources();
+	KamiRessourceCache::getInstance().loadFragmentShaderRessources();
 	KamiClientOptions::getInstance().readClientOptionsJson();
+	//loads raw ressource data
+	KamiRessourceCache::getInstance().loadTextures();
+
 
 	m_randomNumberGenerator.test();
 	
@@ -25,6 +30,7 @@ void KamiAppLayer::initialiseAppLayer()
 	//we try to initialize DirectX here if DX_WINDOWS is defined 
 	
 
+
 #ifdef GLFW_WINDOW
 	//opengl also gets initialized
 	m_glfwWindow.init();
@@ -32,9 +38,8 @@ void KamiAppLayer::initialiseAppLayer()
 	m_glfwWindow.create(KamiClientOptions::getInstance().m_screenWidth, KamiClientOptions::getInstance().m_screenHeight);
 #endif
 
-	//should initialize the game state game logic and view attached to the game logic 
+	//requires OPENGL function to be LOADED
+	KamiRessourceCache::getInstance().createShaderPrograms();
 
-	//actually i have a bug in the destructor if my texture class right now where i call the stb free method 
-	//in the destructor but closing the window and not the program will cause an exception
 
 }
