@@ -122,7 +122,7 @@ void KamiEntityRenderSystem::renderEntity(KamiGameEntity& entity)
 
 		transformComponent.m_projectionLocation = glGetUniformLocation(KamiRessourceCache::getInstance().m_shaderProgramRessources[shaderComponent.m_shaderProgramName], "projection");
 
-		transformComponent.m_hasOpenglHandle = true;
+		transformComponent.m_hasTransformLocations = true;
 
 	}
 	glUniformMatrix4fv(transformComponent.m_projectionLocation, 1, GL_FALSE, glm::value_ptr(transformComponent.m_projectionMatrix));
